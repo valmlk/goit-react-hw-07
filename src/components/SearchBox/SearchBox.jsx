@@ -8,8 +8,6 @@ const SearchBox = () => {
   const dispatch = useDispatch();
   const filterState = useSelector(state => state.filter.name);
 
-  console.log('Filter State:', filterState);
-
   return (
     <div className={css.box}>
       <label htmlFor={id}>Find contacts by name</label>
