@@ -4,9 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { deleteContact } from '../../redux/contactsSlice';
 import { deleteContact } from '../../redux/operations';
 import { selectVisibleContacts } from '../../redux/selectors';
+import { fetchContacts } from '../../redux/operations';
+import { useEffect } from 'react';
 
 const ContactList = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   // const contactsState = useSelector(state => state.contacts.items);
   // const filterState = useSelector(state => state.filter && state.filter.name);
 
